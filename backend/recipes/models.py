@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Step(models.Model):
     step_name = models.CharField(max_length=100)
     description = models.TextField()
@@ -16,4 +17,4 @@ class Recipes(models.Model):
     author = models.ForeignKey(to=User, on_delete=models.DO_NOTHING, related_name="recipes")
 
     def __str__(self):
-        return f'{self.name} \ {self.author.username}'
+        return f'{self.name} / {self.author.username}'
