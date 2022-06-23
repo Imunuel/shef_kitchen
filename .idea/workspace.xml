@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="79f597a6-44f9-4aa5-923a-9df4c1097f65" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/recipes/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticsearch/client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elastic/services.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +40,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/roman/shef_kitchen/elastic/services.py"
+    "last_opened_file_path": "/home/roman/shef_kitchen/elastic/elasticsearch.py"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/elastic_services" />
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="services" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="elasticsearch" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="shef_kitchen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -55,7 +62,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/elastic/services.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/elastic/elasticsearch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />

@@ -1,8 +1,8 @@
-from rest_framework import viewsets, mixins, status
+from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from elastic.services import getting_recipes
+from .services import getting_recipes
 
 
 class RecipesList(viewsets.GenericViewSet):
@@ -13,7 +13,7 @@ class RecipesList(viewsets.GenericViewSet):
     # def get_queryset(self):
     #     pass
 
-    @action(methods=['GET', ], detail=True)
+    @action(methods=['GET', ], detail=False)
     def get_recipes(self, request):
         parameter = request.GET.get('parameter')
         data = getting_recipes(parameter=parameter)

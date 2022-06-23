@@ -1,3 +1,5 @@
+import random
+
 from elasticsearch import Elasticsearch
 
 client = Elasticsearch("http://localhost:9200")
@@ -59,6 +61,13 @@ EXAMPLE_OF_QUERY = {
 }
 """
 
+NAMES = ["", "", ""]
+DESCRIPTIONS = ["", "", ""]
+CATEGORIES = ["", "", ""]
+STEPS = ["", "", ""]
+AUTHOR = ["", "", ""]
+LIKES = ["", "", ""]
+
 
 def create_recipes_index():
     if client.indices.exists(index=RECIPES_INDEX):
@@ -67,42 +76,15 @@ def create_recipes_index():
     # {'acknowledged': True, 'shards_acknowledged': True, 'index': 'gl'}
 
 
-def data_processing(data: dict):
-    result = {}
-    first_level = data["hits"]['hits']
-    for hits in first_level:
-        result[hits["_id"]] = hits["_source"]
-
-    return result
-
-
-def put_data():
-    index = 'recipes'
-    _doc = {
-        'name': 'third recipe',
-        'description': 'yammy',
-        'steps': []
-    }
-    return client.index(index=index, document=_doc)
-
-
-def getting_recipes(parameter: str):
-    query = {
-        "bool": {
-            "must": [
-                {"match": {"name": parameter}}
-            ],
-            "should": [
-                {"match": {"categories": parameter}}
-            ]
-        }
-    }
-    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
-    data = data_processing(data=elasticsearch_data)
-
-    return data
+def create_random_recipes(count_of_recipes: int):
+    for i in count_of_recipes:
+        _name = random.randint(0, NAMES.count())
+        _description = random.randint(0, DESCRIPTIONS.count())
 
 
 if __name__ == "__main__":
-    create_recipes_index()
-    # getting_recipes()
+    # if create_recipes_index():
+    #     print("=== Index already exist ===")
+    # print("=== Were some problems with index ===")
+
+    print(NAMES.count())
