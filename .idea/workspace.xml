@@ -5,31 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79f597a6-44f9-4aa5-923a-9df4c1097f65" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/recipes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/recipes/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/recipes/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/recipes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/signals.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elasticsearch/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/elasticsearch/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elasticsearch/client.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,19 +28,22 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Apzm52BtARKN44v4Chiy8rYvDN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/roman/shef_kitchen/elasticsearch/client.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/roman/shef_kitchen/elastic/services.py"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="client" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="services" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="shef_kitchen" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,11 +51,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="/usr/bin/python3.10" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/elasticsearch" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/elastic" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/elasticsearch/client.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/elastic/services.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
