@@ -10,7 +10,7 @@ MAPPINGS = {
         "categories": {"type": "text"},
         "steps": {"type": "text"},
         "author": {"type": "text"},
-        "likes": {"type": "integer"},
+        "likes": {"type": "text"},
     }
 }
 
