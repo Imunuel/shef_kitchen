@@ -38,6 +38,11 @@ LIKES = ["Oscar", "Urbane", "Wolfgang", "Tanner", "Karter", "Finnian", "Anderson
          "Uriel", "Roland", "Quigley", "Belen", "Kaydence", "Queena", "Grace", "Vera", "Taya", "Josie", "Farah",
          "Waneeta", "Daisy", "Lila", "Leah", "Julianna", "Farah", "Megan", "Rivka", "Winona", "Belle", "Rosalyn",
          "Emma", "Zofia", "Hanna", "Urina", "Orilla", "Wilmina"]
+FAVORITE = ["Oscar", "Urbane", "Wolfgang", "Tanner", "Karter", "Finnian", "Anderson", "Clark", "Frederick", "Umar",
+         "Korbin", "Brycen", "Colby", "Xiomar", "Kieran", "Wayne", "Leon", "Nelson", "Yoel", "Duke", "Irvin", "Rhys",
+         "Uriel", "Roland", "Quigley", "Belen", "Kaydence", "Queena", "Grace", "Vera", "Taya", "Josie", "Farah",
+         "Waneeta", "Daisy", "Lila", "Leah", "Julianna", "Farah", "Megan", "Rivka", "Winona", "Belle", "Rosalyn",
+         "Emma", "Zofia", "Hanna", "Urina", "Orilla", "Wilmina"]
 
 
 def create_index(index: str):
@@ -63,6 +68,7 @@ def create_random_recipes(count_of_recipes: int):
         _steps = list(set(random.choices(STEPS, k=random.randint(1, len(STEPS) + 1))))
         _author = random.choice(AUTHOR)
         _likes = list(set(random.choices(LIKES, k=random.randint(0, len(LIKES) + 1))))
+        _favorite = list(set(random.choices(FAVORITE, k=random.randint(0, len(FAVORITE) + 1))))
 
         _id = \
             put_doc_in_index(name=_name, description=_description, categories=_categories, steps=_steps, author=_author,

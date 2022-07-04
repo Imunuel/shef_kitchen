@@ -11,6 +11,7 @@ MAPPINGS = {
         "steps": {"type": "text"},
         "author": {"type": "text"},
         "likes": {"type": "text"},
+        "favorite": {"type": "text"},
     }
 }
 
