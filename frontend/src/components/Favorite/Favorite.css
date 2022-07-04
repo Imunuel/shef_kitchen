@@ -1,0 +1,54 @@
+.recipe{
+    display: flex;
+    height: 200px;
+    margin-bottom: 5%;
+}
+.number{
+    width: 9%;
+    height: 100%;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 1%;
+}
+.numbered_recipe{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+.recipe_photo{
+    width: 200px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+.recipe_data{
+    width: 96%;
+    height: 91%;
+    padding: 1%;
+}
+.description{
+    font-size: 30px;
+    height: 80%;
+}
+.other_data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    font-size: 20px;
+}
+.score{
+    width: 20%;
+}
+.likes{
+    display: flex;
+    align-items: center;
+}
+.like{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
