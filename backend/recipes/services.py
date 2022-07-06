@@ -41,13 +41,26 @@ def update_doc(id: str, likes: list, username: str):
     return True
 
 
-def getting_recipes(parameter: str):
+def getting_recipes_by_parameter(parameter: str):
     query = {
         "bool": {
             "should": [
                 {"match": {"name": parameter}},
                 {"match": {"description": parameter}},
                 {"match": {"categories": parameter}}
+            ]
+        }
+    }
+    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
+    data = data_processing(data=elasticsearch_data)
+
+    return data
+
+def get_my_favorite_recipe(username: str):
+    query = {
+        "bool": {
+            "must": [
+                {"match": {"favorite": username}}
             ]
         }
     }
