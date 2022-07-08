@@ -5,10 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79f597a6-44f9-4aa5-923a-9df4c1097f65" name="Changes" comment="refactoring services">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Detail/Detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Detail/Detail.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/images/SecB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/images/maxresdefault-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/recipes/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/recipes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/recipes/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/recipes/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/recipes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elastic/elastic_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/elastic/elastic_services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Favorite/Favorite.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Favorite/Favorite.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Favorite/Favorite.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Favorite/Favorite.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/header/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

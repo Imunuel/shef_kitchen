@@ -7,9 +7,9 @@ class StepSerializer(serializers.ModelSerializer):
     class Meta:
         model = Step
         fields = (
-            'step_name',
-            'description',
-            'image'
+            # 'step_name',
+            # 'description',
+            'image',
         )
 
 

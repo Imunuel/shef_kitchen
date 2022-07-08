@@ -5,12 +5,15 @@ RECIPES_INDEX = 'recipes'
 
 MAPPINGS = {
     "properties": {
+        "photo": {"type": "text"},
         "name": {"type": "text"},
         "description": {"type": "text"},
         "categories": {"type": "text"},
         "steps": {"type": "text"},
         "author": {"type": "text"},
         "likes": {"type": "text"},
+        "count_likes": {"type": "integer"},
+        "favorite": {"type": "text"},
     }
 }
 

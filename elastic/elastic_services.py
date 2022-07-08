@@ -1,8 +1,19 @@
 import random
 
 from backend.recipes.constants import client, RECIPES_INDEX, MAPPINGS, SETTINGS
-from backend.recipes.services import put_doc_in_index
+from backend.recipes.services import put_doc_in_index, update_doc_after_like, get_top_recipes
 
+PHOTO = [
+    "http://127.0.0.1:8000/media/steps/big-hamburger-with-double-beef-french-fries_252907-8_r0xDrXE.webp",
+    "http://127.0.0.1:8000/media/steps/big-hamburger-with-double-beef-french-fries_252907-8.webp",
+    "http://127.0.0.1:8000/media/steps/hot-shakshuka-819x1024_XB5RyKe.webp",
+    "http://127.0.0.1:8000/media/steps/index_gq1w9DC.jpeg",
+    "http://127.0.0.1:8000/media/steps/kk_V7sbfXg.jpeg",
+    "http://127.0.0.1:8000/media/steps/healthy-food-clean-eating-selection-260nw-722718097_jk16D16.webp",
+    "http://127.0.0.1:8000/media/steps/images_mQ7gUHa.jpeg",
+    "http://127.0.0.1:8000/media/steps/illustration-of-different-plates-of-food_xKtm7wy.jpg",
+    "http://127.0.0.1:8000/media/steps/food_lLTqrTz.jpeg",
+]
 NAMES = ["Delicious puffs", "Carbonara with chicken", "Pizza dough on kefir", "Tender cottage cheese cake",
          "Buckwheat noodles with chicken teriyaki", "French meat with mushrooms", "Pork heart",
          "Chicken drumstick in the oven", "Delicious aspic pizza in the oven", "Lean borscht with beans",
@@ -38,6 +49,22 @@ LIKES = ["Oscar", "Urbane", "Wolfgang", "Tanner", "Karter", "Finnian", "Anderson
          "Uriel", "Roland", "Quigley", "Belen", "Kaydence", "Queena", "Grace", "Vera", "Taya", "Josie", "Farah",
          "Waneeta", "Daisy", "Lila", "Leah", "Julianna", "Farah", "Megan", "Rivka", "Winona", "Belle", "Rosalyn",
          "Emma", "Zofia", "Hanna", "Urina", "Orilla", "Wilmina"]
+FAVORITE = ["Oscar", "Urbane", "Wolfgang", "Tanner", "Karter", "Finnian", "Anderson", "Clark", "Frederick", "Umar",
+            "Korbin", "Brycen", "Colby", "Xiomar", "Kieran", "Wayne", "Leon", "Nelson", "Yoel", "Duke", "Irvin", "Rhys",
+            "Uriel", "Roland", "Quigley", "Belen", "Kaydence", "Queena", "Grace", "Vera", "Taya", "Josie", "Farah",
+            "Waneeta", "Daisy", "Lila", "Leah", "Julianna", "Farah", "Megan", "Rivka", "Winona", "Belle", "Rosalyn",
+            "Emma", "Zofia", "Hanna", "Urina", "Orilla", "Wilmina"]
+STEP_PHOTO = [
+    "http://127.0.0.1:8000/media/steps/big-hamburger-with-double-beef-french-fries_252907-8_r0xDrXE.webp",
+    "http://127.0.0.1:8000/media/steps/big-hamburger-with-double-beef-french-fries_252907-8.webp",
+    "http://127.0.0.1:8000/media/steps/hot-shakshuka-819x1024_XB5RyKe.webp",
+    "http://127.0.0.1:8000/media/steps/index_gq1w9DC.jpeg",
+    "http://127.0.0.1:8000/media/steps/kk_V7sbfXg.jpeg",
+    "http://127.0.0.1:8000/media/steps/healthy-food-clean-eating-selection-260nw-722718097_jk16D16.webp",
+    "http://127.0.0.1:8000/media/steps/images_mQ7gUHa.jpeg",
+    "http://127.0.0.1:8000/media/steps/illustration-of-different-plates-of-food_xKtm7wy.jpg",
+    "http://127.0.0.1:8000/media/steps/food_lLTqrTz.jpeg",
+]
 
 
 def create_index(index: str):
@@ -57,16 +84,23 @@ def delete_index(index: str):
 
 def create_random_recipes(count_of_recipes: int):
     for i in range(0, count_of_recipes):
+        random_number_for_steps = random.randint(1, len(STEPS) + 1)
+        _photo = random.choice(PHOTO)
         _name = random.choice(NAMES)
         _description = random.choice(DESCRIPTIONS)
         _categories = list(set(random.choices(CATEGORIES, k=random.randint(1, len(CATEGORIES) + 1))))
-        _steps = list(set(random.choices(STEPS, k=random.randint(1, len(STEPS) + 1))))
+        _steps = []
+        for j in range(0, random_number_for_steps):
+            _steps.append([random.choice(STEPS), random.choice(STEP_PHOTO)])
         _author = random.choice(AUTHOR)
         _likes = list(set(random.choices(LIKES, k=random.randint(0, len(LIKES) + 1))))
+        _count_likes = len(_likes)
+        _favorite = list(set(random.choices(FAVORITE, k=random.randint(0, len(FAVORITE) + 1))))
 
         _id = \
-            put_doc_in_index(name=_name, description=_description, categories=_categories, steps=_steps, author=_author,
-                             likes=_likes)['_id']
+            put_doc_in_index(photo=_photo, name=_name, description=_description, categories=_categories, steps=_steps,
+                             author=_author,
+                             likes=_likes, count_likes=_count_likes, favorite=_favorite)['_id']
 
         print(f"=== Was created {i + 1} recipe with id: {_id} ===")
 
@@ -78,9 +112,12 @@ if __name__ == "__main__":
         print("=== Were some problems with index ===")
 
     # This function will create {count} recipes
-    create_random_recipes(20)
+    # create_random_recipes(30)
 
     # This function will delete {index} index
     # delete_index(RECIPES_INDEX)
+
+    # This function will update the document by ID: count_likes +1 and likes.append(username)
+    # update_doc_after_like(id="", username="")
 
     print("=== Done ===")
