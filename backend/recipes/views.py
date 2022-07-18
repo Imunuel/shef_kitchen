@@ -1,9 +1,8 @@
-from cairo import Status
 from rest_framework import viewsets, status, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .services import get_recipes_by_parameter, get_my_favorite_recipes, get_top_recipes
+from .services import get_recipes_by_parameter, get_my_favorite_recipes, get_top_recipes, get_recipe_by_id
 from .serializers import StepSerializer
 from .models import Step
 
@@ -27,10 +26,17 @@ class RecipesList(viewsets.GenericViewSet):
         data = get_top_recipes()
         return Response(data=data, status=status.HTTP_200_OK)
 
+    @action(methods=['GET', ], detail=False)
+    def get_recipe_by_id(self, request):
+        id = request.GET.get("id")
+        data = get_recipe_by_id(id=id)
+        return Response(data=data, status=status.HTTP_200_OK)
+
+
 class StepDetail(mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
 
     def get_serializer_class(self):
         return StepSerializer
-    
+
     def get_queryset(self):
         return Step.objects.all()

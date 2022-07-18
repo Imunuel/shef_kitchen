@@ -1,0 +1,18 @@
+.shef{
+    width: 80%;
+    margin-left: 10%;
+}
+.recipe_form{
+    font-size: 20px;
+}
+.label_form{
+    padding: 10px;
+}
+.input_form{
+    width: 400px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.file_form{
+    margin-bottom: 15px;
+}

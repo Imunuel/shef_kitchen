@@ -1,7 +1,8 @@
 import random
 
 from backend.recipes.constants import client, RECIPES_INDEX, MAPPINGS, SETTINGS
-from backend.recipes.services import put_doc_in_index, update_doc_after_like, get_top_recipes
+from backend.recipes.services import put_doc_in_index, update_doc_after_like, get_top_recipes, data_processing, \
+    min_processing, get_recipe_by_id
 
 PHOTO = [
     "http://127.0.0.1:8000/media/steps/big-hamburger-with-double-beef-french-fries_252907-8_r0xDrXE.webp",
@@ -119,5 +120,10 @@ if __name__ == "__main__":
 
     # This function will update the document by ID: count_likes +1 and likes.append(username)
     # update_doc_after_like(id="", username="")
+
+    # get_top_recipes()
+
+    result = get_recipe_by_id(id="x9GT3YEBUj24i5tQeq22")
+    print(result)
 
     print("=== Done ===")

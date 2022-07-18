@@ -1,13 +1,20 @@
 from .constants import client, RECIPES_INDEX
 
 
+def min_processing(data: dict):
+    result = {
+        "id": data["_id"],
+        **data["_source"]
+    }
+    if data["_score"]:
+        result['score'] = round(data["_score"], 2)
+
+    return result
+
+
 def data_processing(data: dict):
-    result = {}
     first_level = data["hits"]['hits']
-    for hits in first_level:
-        result[hits["_id"]] = hits["_source"]
-        if hits["_score"]:
-            result[hits["_id"]]["score"] = round(hits["_score"], 2)
+    result = [min_processing(recipe) for recipe in first_level]
 
     return result
 
@@ -78,8 +85,21 @@ def get_my_favorite_recipes(username: str):
 
 
 def get_top_recipes():
-
-    elasticsearch_data = client.search(index=RECIPES_INDEX, sort={"count_likes": {"order": "desc"}})
+    elasticsearch_data = client.search(index=RECIPES_INDEX, sort={"count_likes": {"order": "desc"}}, size=100)
     data = data_processing(data=elasticsearch_data)
+
+    return data
+
+
+def get_recipe_by_id(id: str):
+    query = {
+        "bool": {
+            "must": [
+                {"match": {"_id": id}}
+            ]
+        }
+    }
+    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query)
+    data = data_processing(elasticsearch_data)
 
     return data

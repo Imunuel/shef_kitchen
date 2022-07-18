@@ -1,29 +1,33 @@
 import React from 'react';
 import './App.css';
-import "./components/Favorite/Favorite.css"
-import Header from './components/header/Header';
-import Favorite from './components/Favorite/Favorite'
-import Detail from './components/Detail/Detail';
-import Top from './components/Top/Top';
+import "./pages/Favorite/Favorite.css"
+import { Header } from './pages/header/Header';
+import { Favorite } from './pages/Favorite/Favorite'
+import { Menu } from './pages/Menu/Menu';
+import { Shef } from './pages/Shef/Shef';
+import { Detail } from './pages/Detail/Detail';
+import Top from './pages/Top/Top';
 
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Footer from './pages/Footer/Footer';
 
-function App() {
+
+function App(){
   return (
-    <BrowserRouter>
     <div className="App">
       <Header/>
       <div className="content">
-
       <Routes>
-              <Route path='/shef/favorite' element={<Favorite/>} />
-              <Route path='/shef/detail' element={<Detail/>} />
-              <Route path='/shef/top' element={<Top/>} />
+      <Route path='/shef' element={<Shef/>} />
+      <Route path='/shef/favorite' element={<Favorite/>} />
+      <Route path='/shef/recipe/:id' element={<Detail/>}  />
+      <Route path='/shef/top' element={<Top/>} />
+      <Route path='/shef/menu' element={<Menu/>} />
       </Routes>
 
       </div>
+      <Footer/>
     </div>
-    </BrowserRouter>
   );
 }
 
