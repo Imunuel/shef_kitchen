@@ -1,12 +1,4 @@
-export interface ITopRecipes{
-    id: string,
-    photo: string,
-    name: string,
-    author: string
-    count_likes: number,
-}
-
-export interface IFavoriteRecipes{
+export interface IShortRecipes{
     id: string,
     photo: string,
     name: string,
@@ -25,6 +17,18 @@ export interface IDetailRecipe{
     likes: string[]
     count_likes: number
     favorite: string[],
+}
 
+export interface ISearchRecipes{
+    id: string,
+    photo: string,
+    name: string,
+    count_likes: number,
+    score: number
+}
 
+export interface IMenuRecipes{
+    Breakfast: ISearchRecipes[],
+    Lunch: ISearchRecipes[],
+    Dinner: ISearchRecipes[]
 }

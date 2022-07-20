@@ -19,3 +19,9 @@
     height: 75px;
     margin: 7px 15px 0 15px;
 }
+.search{
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 3%;
+}

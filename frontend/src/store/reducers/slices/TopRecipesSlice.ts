@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { ITopRecipes } from "../../../models/models"
+import { IShortRecipes } from "../../../models/models"
 
 interface TopRecipesState {
-    top_recipes: ITopRecipes[],
+    top_recipes: IShortRecipes[],
     isLoading: boolean,
     error: string
 }
@@ -20,7 +20,7 @@ export const topRecipeSlice = createSlice({
         topRecipesFething(state){
             state.isLoading = true
         },
-        topRecipesFethingSuccess(state, action: PayloadAction<ITopRecipes[]>){
+        topRecipesFethingSuccess(state, action: PayloadAction<IShortRecipes[]>){
             state.isLoading = false
             state.error = ""
             state.top_recipes = action.payload

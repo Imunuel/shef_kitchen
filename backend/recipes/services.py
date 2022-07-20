@@ -1,3 +1,5 @@
+import random
+
 from .constants import client, RECIPES_INDEX
 
 
@@ -54,6 +56,29 @@ def update_doc_after_like(id: str, username: str):
     return True
 
 
+def get_recipes_data_for_menu():
+    breakfast = "breakfast"
+    lunch = "lunch"
+    dinner = "dinner"
+    categories_list = [breakfast, lunch, dinner]
+    menu_data = {}
+
+    for category in categories_list:
+        query = {
+            "bool": {
+                "should": [
+                    {"match": {"categories": category}}
+                ]
+            }
+        }
+        elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
+        data = data_processing(elasticsearch_data)
+        print(data)
+        menu_data[category] = data
+
+    return menu_data
+
+
 def get_recipes_by_parameter(parameter: str):
     query = {
         "bool": {
@@ -64,7 +89,7 @@ def get_recipes_by_parameter(parameter: str):
             ]
         }
     }
-    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
+    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=10)
     data = data_processing(data=elasticsearch_data)
 
     return data
@@ -103,3 +128,50 @@ def get_recipe_by_id(id: str):
     data = data_processing(elasticsearch_data)
 
     return data
+
+
+def get_recipes_by_categories(type: str, categories: str):
+    categories = list(set(categories[:-1].split(",")))
+
+    menu_data = get_recipes_data_for_menu()
+    if type == "random":
+        if categories != "":
+            should = []
+            for category in categories:
+                should.append({"match": {"categories": category}})
+            __query = {
+                "bool": {
+                    "should": should
+                }
+            }
+            elasticsearch_data = client.search(index=RECIPES_INDEX, query=__query, size=100)
+            data = data_processing(elasticsearch_data)
+            data = data[random.randint(0, len(data))]
+            return data
+        elif categories == "":
+            pass
+
+    elif type == "day":
+        day_menu = []
+        if "evening" in categories:
+            day_menu.append(menu_data["Breakfast"][random.randint(0, len(menu_data["Breakfast"]) - 1)])
+        if "lunch" in categories:
+            day_menu.append(menu_data["lunch"][random.randint(0, len(menu_data["lunch"]) - 1)])
+        if "dinner" in categories:
+            day_menu.append(menu_data["dinner"][random.randint(0, len(menu_data["dinner"]) - 1)])
+        return day_menu
+
+    elif type == "week":
+        week_menu = []
+
+        for i in range(0, 7):
+            if "evening" in categories:
+                evening_randomit = random.randint(0, len(menu_data["Breakfast"])) - 1
+                week_menu.append(menu_data["Breakfast"][evening_randomit])
+            if "lunch" in categories:
+                lunch_randomit = random.randint(0, len(menu_data["lunch"])) - 1
+                week_menu.append(menu_data["lunch"][lunch_randomit])
+            if "dinner" in categories:
+                dinner_randomit = random.randint(0, len(menu_data["dinner"])) - 1
+                week_menu.append(menu_data["dinner"][dinner_randomit])
+        return week_menu

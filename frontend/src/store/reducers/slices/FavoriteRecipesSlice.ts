@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { IFavoriteRecipes } from "../../../models/models"
+import { IShortRecipes } from "../../../models/models"
 
 interface FavoriteRecipesState {
-    favorite_recipes: IFavoriteRecipes[],
+    favorite_recipes: IShortRecipes[],
     isLoading: boolean,
     error: string
 }
@@ -20,7 +20,7 @@ export const favoriteRecipesSlice = createSlice({
         favoriteRecipesFething(state){
             state.isLoading = true
         },
-        favoriteRecipesFethingSuccess(state, action: PayloadAction<IFavoriteRecipes[]>){
+        favoriteRecipesFethingSuccess(state, action: PayloadAction<IShortRecipes[]>){
             state.isLoading = false
             state.error = ""
             state.favorite_recipes = action.payload

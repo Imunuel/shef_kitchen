@@ -2,7 +2,7 @@ import random
 
 from backend.recipes.constants import client, RECIPES_INDEX, MAPPINGS, SETTINGS
 from backend.recipes.services import put_doc_in_index, update_doc_after_like, get_top_recipes, data_processing, \
-    min_processing, get_recipe_by_id
+    min_processing, get_recipe_by_id, get_recipes_by_categories
 
 PHOTO = [
     "http://127.0.0.1:8000/media/steps/big-hamburger-with-double-beef-french-fries_252907-8_r0xDrXE.webp",
@@ -29,7 +29,7 @@ DESCRIPTIONS = ["Delicious, juicy meat. Vegetables melt in your mouth, complemen
                 "This soup is eaten during fasts",
                 "Creamy dish, fills your mouth with soft, creamy taste. Thanks to the cream, the dish has a thick gravy"]
 CATEGORIES = ["Vegetables", "Dairy", "Lean", "Breakfast", "Lunch", "Dinner", "Afternoon Snack", "Seafood", "Snacks",
-              "Soup", "Meat", "Oven", "Frying Pan", "Dessert", "Drink", "Alcohol", "Cold", "Salad"]
+              "Soup", "Meat", "Oven", "Frying Pan", "Dessert", "Drink", "Alcohol", "Cold", "Salad", "Evening"]
 STEPS = ["Wash and cut vegetables into small cubes. Cut the meat into pieces, if desired, ",
          "In a frying pan with heated oil, put the meat and fry until golden brown. Transfer the cooked meat to a plate",
          "Put the vegetables in a frying pan and fry until golden",
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
     # get_top_recipes()
 
-    result = get_recipe_by_id(id="x9GT3YEBUj24i5tQeq22")
-    print(result)
+    # result = get_recipe_by_id(id="x9GT3YEBUj24i5tQeq22")
 
+    get_recipes_by_categories(type="day", categories="lunch,")
     print("=== Done ===")

@@ -5,29 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79f597a6-44f9-4aa5-923a-9df4c1097f65" name="Changes" comment="refactoring services">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_07_22,_16_10_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_07_22__16_10__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/recipes/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/recipes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/recipes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/elastic/elastic_services.py" beforeDir="false" afterPath="$PROJECT_DIR$/elastic/elastic_services.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Detail/Detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Detail/Detail.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Favorite/Favorite.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Favorite/Favorite.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Screenshot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Top/Top.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Top/Top.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/header/Header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/models/models.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/models/models.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Menu/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Menu/Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Menu/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Menu/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/reducers/ActionRecipes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/reducers/ActionRecipes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/reducers/slices/FavoriteRecipesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/reducers/slices/FavoriteRecipesSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/reducers/slices/TopRecipesSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/reducers/slices/TopRecipesSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
