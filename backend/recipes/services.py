@@ -56,6 +56,28 @@ def update_doc_after_like(id: str, username: str):
     return True
 
 
+def update_doc_after_dislike(id: str, username: str):
+    _doc = client.get(index=RECIPES_INDEX, id=id)["_source"]
+    _doc["likes"].remove(username)
+    _doc["count_likes"] -= 1
+    client.index(index=RECIPES_INDEX, id=id, document=_doc)
+    return True
+
+
+def update_add_to_favorite(id: str, username: str):
+    _doc = client.get(index=RECIPES_INDEX, id=id)["_source"]
+    _doc["favorite"].append(username)
+    client.index(index=RECIPES_INDEX, id=id, document=_doc)
+    return True
+
+
+def update_remove_from_favorite(id: str, username: str):
+    _doc = client.get(index=RECIPES_INDEX, id=id)["_source"]
+    _doc["favorite"].remove(username)
+    client.index(index=RECIPES_INDEX, id=id, document=_doc)
+    return True
+
+
 def get_recipes_data_for_menu():
     breakfast = "breakfast"
     lunch = "lunch"
@@ -73,7 +95,6 @@ def get_recipes_data_for_menu():
         }
         elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
         data = data_processing(elasticsearch_data)
-        print(data)
         menu_data[category] = data
 
     return menu_data
@@ -125,6 +146,20 @@ def get_recipe_by_id(id: str):
         }
     }
     elasticsearch_data = client.search(index=RECIPES_INDEX, query=query)
+    data = data_processing(elasticsearch_data)
+
+    return data
+
+
+def get_my_recipes(username: str):
+    query = {
+        "bool": {
+            "must": [
+                {"match": {"author": username}}
+            ]
+        }
+    }
+    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
     data = data_processing(elasticsearch_data)
 
     return data

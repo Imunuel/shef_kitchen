@@ -4,7 +4,7 @@ from .views import UserAPI
 
 router = DefaultRouter()
 
-router.register(r'actions', UserAPI, basename='user_create')
+router.register(r'', UserAPI, basename='user_create')
 
 user_patterns = [
                 ] + router.urls

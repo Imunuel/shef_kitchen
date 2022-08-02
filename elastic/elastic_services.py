@@ -29,7 +29,7 @@ DESCRIPTIONS = ["Delicious, juicy meat. Vegetables melt in your mouth, complemen
                 "This soup is eaten during fasts",
                 "Creamy dish, fills your mouth with soft, creamy taste. Thanks to the cream, the dish has a thick gravy"]
 CATEGORIES = ["Vegetables", "Dairy", "Lean", "Breakfast", "Lunch", "Dinner", "Afternoon Snack", "Seafood", "Snacks",
-              "Soup", "Meat", "Oven", "Frying Pan", "Dessert", "Drink", "Alcohol", "Cold", "Salad", "Evening"]
+              "Soup", "Meat", "Oven", "Frying Pan", "Dessert", "Drink", "Alcohol", "Cold", "Salad", "Breakfast"]
 STEPS = ["Wash and cut vegetables into small cubes. Cut the meat into pieces, if desired, ",
          "In a frying pan with heated oil, put the meat and fry until golden brown. Transfer the cooked meat to a plate",
          "Put the vegetables in a frying pan and fry until golden",
@@ -113,7 +113,7 @@ if __name__ == "__main__":
         print("=== Were some problems with index ===")
 
     # This function will create {count} recipes
-    # create_random_recipes(30)
+    create_random_recipes(60)
 
     # This function will delete {index} index
     # delete_index(RECIPES_INDEX)
@@ -125,5 +125,6 @@ if __name__ == "__main__":
 
     # result = get_recipe_by_id(id="x9GT3YEBUj24i5tQeq22")
 
-    get_recipes_by_categories(type="day", categories="lunch,")
+    # get_recipes_by_categories(type="day", categories="lunch,")
+
     print("=== Done ===")

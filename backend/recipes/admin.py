@@ -1,7 +1,4 @@
 from django.contrib import admin
-from .models import Step, Recipes
+from .models import RecipePhoto
 
-admin.site.register(Step)
-admin.site.register(Recipes)
-
-# Register your models here.
+admin.site.register(RecipePhoto)

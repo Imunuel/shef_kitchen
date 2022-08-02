@@ -4,6 +4,7 @@ export interface IShortRecipes{
     name: string,
     author: string
     count_likes: number,
+    likes: string[]
 }
 
 export interface IDetailRecipe{
@@ -24,11 +25,19 @@ export interface ISearchRecipes{
     photo: string,
     name: string,
     count_likes: number,
-    score: number
+    likes: string[],
+    score: number,
 }
 
 export interface IMenuRecipes{
     Breakfast: ISearchRecipes[],
     Lunch: ISearchRecipes[],
     Dinner: ISearchRecipes[]
+}
+
+export interface IProfile{
+    username: string,
+    first_name: string,
+    last_name: string,
+    email: string
 }

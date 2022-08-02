@@ -1,8 +1,10 @@
+import cookie from "cookiejs";
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import image from "../../pages/Screenshot_1.png";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/redux";
 import { FetchFavoriteRecipes } from "../../store/reducers/ActionRecipes";
+import { Like } from "../Like";
 import "./Favorite.css";
 
 
@@ -13,7 +15,7 @@ export const Favorite: React.FC = ({}) => {
   const {favorite_recipes, isLoading, error} = useAppSelector(state => state.FavoriteRecipesReducer)
 
   useEffect(() => {
-    dispatch(FetchFavoriteRecipes("Hanna"))
+    dispatch(FetchFavoriteRecipes(cookie.get("username").toString()))
   }, [])
 
   return (
@@ -32,7 +34,7 @@ export const Favorite: React.FC = ({}) => {
                     <div className="author">Author: {recipe.author}</div>
                     <div className="likes">
                     <div className="count">{recipe.count_likes}</div>
-                    <img src={image} alt="" className="like" />
+                    <Like likes={recipe.likes} id={recipe.id}/>
                     </div>
                     </div>
               </div>

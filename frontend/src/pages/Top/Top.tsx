@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import "./Top.css"
-import image from "../../pages/Screenshot_1.png";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/redux";
 import { FetchTopRecipes } from "../../store/reducers/ActionRecipes";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Like } from "../Like";
 
 
 const Top: React.FC = ({}) => {
@@ -30,7 +29,7 @@ const Top: React.FC = ({}) => {
             <div className="author">Author: {recipe.author}</div>
             <div className="likes">
             <div className="count">{recipe.count_likes}</div>
-            <img src={image} alt="" className="like" />
+            <Like likes={recipe.likes} id={recipe.id}/>
             </div>
             </div>
       </div>

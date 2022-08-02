@@ -4,11 +4,10 @@ import image from "../../pages/Screenshot_1.png";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/hooks/redux";
 import { FetchDetailRecipe } from "../../store/reducers/ActionRecipes";
+import { ChangeFavorite } from "../ChangeFavorite";
 
 
-
-
-export function Detail (){
+export const Detail: React.FC = ({}) => {
 
     const params = useParams<{"id": string}>()
 
@@ -52,9 +51,7 @@ export function Detail (){
                 <div className="category">{category}</div>
                 )}
             </div>
-            <div className="add_to_favorite">
-                <button className="button">Избранное</button>
-            </div>
+            <ChangeFavorite favorite={recipe.favorite} id={recipe.id}/>
         </div>
         )}
         </>

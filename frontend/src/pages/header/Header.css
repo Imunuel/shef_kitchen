@@ -22,3 +22,39 @@ a {
     color: #000;
     text-decoration: none;
 }
+
+
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    font-size: 25px;
+    margin-left: 40px;
+    background: rgb(253, 253, 253);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 7px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    background-color: #00A4BD;
+  }
+.selector{
+    width: auto;
+    height: 30px;
+    border: none;
+    font-size: 30px;
+    background: rgb(212, 206, 208);
+}

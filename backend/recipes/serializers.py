@@ -1,25 +1,15 @@
 from rest_framework import serializers
 
-from .models import Recipes, Step
+from .models import RecipePhoto
 
 
-class StepSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Step
-        fields = (
-            # 'step_name',
-            # 'description',
-            'image',
-        )
+class CreateRecipeSerializer(serializers.Serializer):
+    name = serializers.CharField(max_length=150)
+    photo = serializers.CharField(max_length=255)
+    description = serializers.CharField(max_length=255)
+    step_texts = serializers.ListField()
+    step_files = serializers.ListField()
 
 
-class RecipesSerializer(serializers.ModelSerializer):
-    steps = StepSerializer(many=True)
-
-    class Meta:
-        model = Recipes
-        fields = (
-            'name',
-            'steps',
-            'author'
-        )
+class RecipePhotoSerializer(serializers.Serializer):
+    photo = serializers.ImageField(required=True)

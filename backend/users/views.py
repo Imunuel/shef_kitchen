@@ -4,20 +4,25 @@ from rest_framework.response import Response
 
 from django.contrib.auth.models import User
 
-from .serializers import CreateUserSerializer, UpdateUserSerializer
-from .services import create_user, update_user
+from .serializers import DefaultUserSerializer
+from .services import create_user, update_user, check_user_exist
 
 
-class UserAPI(viewsets.GenericViewSet):
+class UserAPI(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def get_serializer_class(self):
-        if self.action == 'create_user':
-            return CreateUserSerializer
-        elif self.action == 'update_user':
-            return UpdateUserSerializer
+        return DefaultUserSerializer
 
     def get_queryset(self):
         return User.objects.all()
+
+    @action(methods=['GET', ], detail=False)
+    def get_me(self, request):
+        username = request.GET.get("username")
+        serializer = self.get_serializer_class()
+        current_user = User.objects.get(username=username)
+        serialized_data = serializer(current_user).data
+        return Response(data=serialized_data, status=status.HTTP_200_OK)
 
     @action(methods=['POST', ], detail=False)
     def create_user(self, request):
@@ -32,4 +37,14 @@ class UserAPI(viewsets.GenericViewSet):
         serializer = serializer(request.data)
         if update_user(data=serializer.data):
             return Response(status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+    @action(methods=['GET', ], detail=False)
+    def login(self, request):
+        username = request.GET.get("username")
+        serializer = self.get_serializer_class()
+        user = check_user_exist(username=username)
+        if user:
+            data = serializer(user).data
+            return Response(data=data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_400_BAD_REQUEST)

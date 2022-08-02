@@ -21,3 +21,10 @@ def update_user(data: dict):
     current_user.save()
 
     return True
+
+
+def check_user_exist(username: str):
+    if User.objects.filter(username=username).exists():
+        return User.objects.get(username=username)
+    return False
+
