@@ -1,4 +1,4 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, mixins
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -8,12 +8,11 @@ from .services import get_recipes_by_parameter, get_my_favorite_recipes, get_top
 from .serializers import CreateRecipeSerializer, RecipePhotoSerializer
 
 
-class RecipesList(viewsets.GenericViewSet):
+class RecipesList(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
     def get_serializer_class(self):
         if self.action == "create_recipe":
-            # return CreateRecipeSerializer
-            return RecipePhotoSerializer
+            return CreateRecipeSerializer
 
     @action(methods=['GET', ], detail=False)
     def get_recipes(self, request):
@@ -62,7 +61,7 @@ class RecipesList(viewsets.GenericViewSet):
     def create_recipe(self, request):
         serializer = self.get_serializer_class()
         print(request.data)
-        return Response(status=status.HTTP_200_OK)
+        return Response(data=request.data, status=status.HTTP_200_OK)
 
     @action(methods=['GET', ], detail=False)
     def like(self, request):

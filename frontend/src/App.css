@@ -8,4 +8,5 @@ body{
   margin-left: 15%;
   margin-top: 5%;
   height: auto;
+  min-height: 500px;
 }

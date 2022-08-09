@@ -1,17 +1,17 @@
-.Header{
+.Header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     background: rgb(212, 206, 208);
 }
-.header_item{
+.header_item {
     width: auto;
     margin-left: 30px;
     margin-right: 30px;
     font-size: 30px;
 }
-.logo{
+.logo {
     width: 75px;
     height: 75px;
     margin-left: 50px;
@@ -23,35 +23,33 @@ a {
     text-decoration: none;
 }
 
-
-
 .dropdown {
     display: inline-block;
     position: relative;
     width: 100%;
-  }
-  .dropdown-content {
+}
+.dropdown-content {
     display: none;
     position: absolute;
     overflow: auto;
-    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
     font-size: 25px;
     margin-left: 40px;
     background: rgb(253, 253, 253);
-  }
-  .dropdown:hover .dropdown-content {
+}
+.dropdown:hover .dropdown-content {
     display: block;
-  }
-  .dropdown-content a {
+}
+.dropdown-content a {
     display: block;
     color: #000000;
     padding: 7px;
     text-decoration: none;
-  }
-  .dropdown-content a:hover {
-    background-color: #00A4BD;
-  }
-.selector{
+}
+.dropdown-content a:hover {
+    background-color: #00a4bd;
+}
+.selector {
     width: auto;
     height: 30px;
     border: none;

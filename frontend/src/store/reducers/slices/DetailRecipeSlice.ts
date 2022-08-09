@@ -1,35 +1,38 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { IDetailRecipe } from "../../../models/models"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { IDetailRecipe } from '../../../models/models'
 
 interface DetailRecipesState {
-    detail_recipe: IDetailRecipe[],
-    isLoading: boolean,
+    detail_recipe: IDetailRecipe[]
+    isLoading: boolean
     error: string
 }
 
 const initialState: DetailRecipesState = {
     detail_recipe: [],
     isLoading: false,
-    error: ""
+    error: '',
 }
 
 export const detailRecipeSlice = createSlice({
-    name: "detail_recipe",
+    name: 'detail_recipe',
     initialState,
     reducers: {
-        detailRecipeFething(state){
+        detailRecipeFething(state) {
             state.isLoading = true
         },
-        detailRecipeFethingSuccess(state, action: PayloadAction<IDetailRecipe[]>){
+        detailRecipeFethingSuccess(
+            state,
+            action: PayloadAction<IDetailRecipe[]>
+        ) {
             state.isLoading = false
-            state.error = ""
+            state.error = ''
             state.detail_recipe = action.payload
         },
-        detailRecipeFethingError(state, action: PayloadAction<string>){
-        state.isLoading = false
-        state.error = action.payload
-        }  
-        }
-    })
+        detailRecipeFethingError(state, action: PayloadAction<string>) {
+            state.isLoading = false
+            state.error = action.payload
+        },
+    },
+})
 
 export default detailRecipeSlice.reducer

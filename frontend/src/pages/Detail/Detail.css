@@ -1,42 +1,42 @@
-.current_recipe{
+.current_recipe {
     width: 100%;
 }
-.information{
+.information {
     width: 100%;
     height: 250px;
     display: flex;
     border: 1px black solid;
     border-radius: 10px;
 }
-.current_photo{
+.current_photo {
     width: 250px;
     height: 251px;
     border-radius: 10px 0 0 10px;
 }
-.current_name{
+.current_name {
     margin-top: 10px;
     margin-left: 10px;
     font-size: 25px;
     padding-right: 10px;
 }
-.current_description{
+.current_description {
     margin-top: 10px;
     margin-left: 10px;
     font-size: 20px;
     padding-right: 10px;
     height: 60%;
 }
-.step{
-    width: 80%;
+.step {
+    width: 60%;
     margin-top: 30px;
-    margin-left: 10%;
+    margin-left: 20%;
     border: 1px black solid;
     border-radius: 10px;
 }
-.step_data{
+.step_data {
     display: flex;
 }
-.step_number{
+.step_number {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,39 +45,39 @@
     height: 50px;
     padding: 7px;
 }
-.step_description{
+.step_description {
     font-size: 20;
     padding: 7px;
 }
-.step_photo{
+.step_photo {
     width: 100%;
     height: 500px;
 }
-.step_photo img{
+.step_photo img {
     width: 100%;
     height: 100%;
     border-radius: 0 0 10px 10px;
 }
-.categories{
+.categories {
     width: 80%;
     margin-left: 10%;
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
 }
-.category{
+.category {
     margin: 7px;
     padding: 10px;
     border-radius: 15px;
     background: rgb(126, 199, 189);
 }
-.add_to_favorite{
+.add_to_favorite {
     width: 80%;
     margin-left: 10%;
     display: flex;
     justify-content: right;
     margin-top: 10px;
 }
-.button{
+.button {
     padding: 5px;
 }

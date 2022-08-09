@@ -124,7 +124,8 @@ def get_my_favorite_recipes(username: str):
             ]
         }
     }
-    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
+    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100,
+                                       sort={"count_likes": {"order": "desc"}})
     data = data_processing(data=elasticsearch_data)
 
     return data
@@ -159,7 +160,8 @@ def get_my_recipes(username: str):
             ]
         }
     }
-    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100)
+    elasticsearch_data = client.search(index=RECIPES_INDEX, query=query, size=100,
+                                       sort={"count_likes": {"order": "desc"}})
     data = data_processing(elasticsearch_data)
 
     return data

@@ -1,11 +1,11 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import TopRecipesReducer from "./reducers/slices/TopRecipesSlice"
-import FavoriteRecipesReducer from "./reducers/slices/FavoriteRecipesSlice"
-import DetailRecipeReducer from "./reducers/slices/DetailRecipeSlice"
-import SearchRecipesReducer from "./reducers/slices/SearchRecipesSlice"
-import MenuRecipesReducer from "./reducers/slices/MenuRecipesSlice"
-import ProfileRecipesReducer from "./reducers/slices/ProfileRecipesSlice"
-import ProfileReducer from "./reducers/slices/ProfileSlice"
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import TopRecipesReducer from './reducers/slices/TopRecipesSlice'
+import FavoriteRecipesReducer from './reducers/slices/FavoriteRecipesSlice'
+import DetailRecipeReducer from './reducers/slices/DetailRecipeSlice'
+import SearchRecipesReducer from './reducers/slices/SearchRecipesSlice'
+import MenuRecipesReducer from './reducers/slices/MenuRecipesSlice'
+import ProfileRecipesReducer from './reducers/slices/ProfileRecipesSlice'
+import ProfileReducer from './reducers/slices/ProfileSlice'
 
 const rootReducer = combineReducers({
     TopRecipesReducer,
@@ -14,12 +14,12 @@ const rootReducer = combineReducers({
     SearchRecipesReducer,
     MenuRecipesReducer,
     ProfileRecipesReducer,
-    ProfileReducer
+    ProfileReducer,
 })
 
 export const setupStore = () => {
     return configureStore({
-        reducer: rootReducer
+        reducer: rootReducer,
     })
 }
 

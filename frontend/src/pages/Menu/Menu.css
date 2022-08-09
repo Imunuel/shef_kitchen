@@ -1,25 +1,25 @@
-.random_recipes{
+.random_recipes {
     display: flex;
     width: 80%;
     margin-left: 10%;
     justify-content: center;
     margin-bottom: 50px;
 }
-.count_parameters{
+.count_parameters {
     text-align: right;
 }
-.count_parameter{
+.count_parameter {
     margin-bottom: 15px;
 }
-.position_parameter{
+.position_parameter {
     margin-bottom: 15px;
 }
-.find{
+.find {
     width: 75px;
     height: 75px;
     margin: 7px 15px 0 15px;
 }
-.search{
+.search {
     display: flex;
     width: 50%;
     margin-left: 25%;

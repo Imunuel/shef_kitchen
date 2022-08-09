@@ -1,9 +1,9 @@
-.recipe{
+.recipe {
     display: flex;
     height: 200px;
     margin-bottom: 5%;
 }
-.number{
+.number {
     width: 9%;
     height: 100%;
     font-size: 60px;
@@ -12,28 +12,28 @@
     justify-content: right;
     padding-right: 1%;
 }
-.numbered_recipe{
+.numbered_recipe {
     width: 90%;
     height: 100%;
     display: flex;
     border: 1px black solid;
     border-radius: 10px;
 }
-.recipe_photo{
+.recipe_photo {
     width: 200px;
     height: 100%;
     border-radius: 10px 0 0 10px;
 }
-.recipe_data{
+.recipe_data {
     width: 96%;
     height: 91%;
     padding: 1%;
 }
-.recipe_name{
+.recipe_name {
     font-size: 30px;
     height: 80%;
 }
-.other_data{
+.other_data {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,14 +41,14 @@
     font-size: 20px;
     padding: 7px;
 }
-.score{
+.score {
     width: 20%;
 }
-.likes{
+.likes {
     display: flex;
     align-items: center;
 }
-.like{
+.like {
     width: 35px;
     height: 35px;
     margin-left: 10px;

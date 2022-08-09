@@ -1,35 +1,35 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { IProfile } from "../../../models/models"
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { IProfile } from '../../../models/models'
 
 interface ProfileSlice {
-    profile: IProfile,
-    isLoading: boolean,
+    profile: IProfile
+    isLoading: boolean
     error: string
 }
 
 const initialState: ProfileSlice = {
-    profile: {username: "", first_name: "", last_name: "", email: ""},
+    profile: { username: '', first_name: '', last_name: '', email: '' },
     isLoading: false,
-    error: ""
+    error: '',
 }
 
 export const profileSlice = createSlice({
-    name: "profile",
+    name: 'profile',
     initialState,
     reducers: {
-        profileFething(state){
+        profileFething(state) {
             state.isLoading = true
         },
-        profileFethingSuccess(state, action: PayloadAction<IProfile>){
+        profileFethingSuccess(state, action: PayloadAction<IProfile>) {
             state.isLoading = false
-            state.error = ""
+            state.error = ''
             state.profile = action.payload
         },
-        profileFethingError(state, action: PayloadAction<string>){
-        state.isLoading = false
-        state.error = action.payload
-        }  
-        }
-    })
+        profileFethingError(state, action: PayloadAction<string>) {
+            state.isLoading = false
+            state.error = action.payload
+        },
+    },
+})
 
 export default profileSlice.reducer

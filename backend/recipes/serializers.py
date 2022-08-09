@@ -12,4 +12,8 @@ class CreateRecipeSerializer(serializers.Serializer):
 
 
 class RecipePhotoSerializer(serializers.Serializer):
-    photo = serializers.ImageField(required=True)
+    class Meta:
+        model = RecipePhoto
+        fields = ("__all__")
+    # photo = serializers.ImageField(required=True)
+    # photo = serializers.CharField(max_length=2000)
